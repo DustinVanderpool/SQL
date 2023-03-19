@@ -1,0 +1,30 @@
+-Create a Boutique Database
+
+CREATE TABLE MyStore (ID INTEGER PRIMARY KEY, Product TEXT, Price INTEGER, Quantity INTEGER, Category TEXT); 
+
+INSERT INTO MyStore values (1, "ACOTAR"
+, 10, 5, "Books");
+INSERT INTO MyStore values (2, "The Nightingale", 10, 5, "Books");
+INSERT INTO MyStore values (3, "Coffee Momma", 4, 20, "Stickers");
+INSERT INTO MyStore values (4, "Happy Life, Happy Life", 4, 20, "Stickers");
+INSERT INTO MyStore values (5, "Jesus is Life", 4, 20, "Stickers"); 
+INSERT INTO MyStore values (6, "Philipians 4:13", 4, 20, "Stickers");
+INSERT INTO MyStore values (7, "Yellowstone Crewneck", 25, 3, "Womens Clothing");
+INSERT INTO MyStore values (8, "Plant your roots", 16, 3, "Womens Clothing");
+INSERT INTO MyStore values (9, "Happiness grows here", 14, 3, "Womens Clothing");
+INSERT INTO MyStore values (10, "Mocha", 6, 10, "Coffee");
+INSERT INTO MyStore values (11, "Machiatto", 6, 10, "Coffee"); 
+INSERT INTO MyStore values (12, "Frap", 5, 10, "Coffee");
+INSERT INTO MyStore values (13, "WIFI", 4, 30, "Tech");
+INSERT INTO MyStore values (14, "Computer Rental", 15, 5, "Tech");
+INSERT INTO MyStore values (15, "Tumbler", 10, 5, "Cups");
+
+-Display the Database ordered by Price
+SELECT * FROM MyStore ORDER by price;
+
+-How many products have quantity under 5?
+SELECT Product, SUM(Quantity) FROM MyStore  WHERE Quantity <5 GROUP BY Product;
+
+-How many products in total are in each category? 
+SELECT Category, SUM(Quantity) FROM MyStore GROUP BY Category;
+
